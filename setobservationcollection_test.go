@@ -7,7 +7,7 @@ import (
 )
 
 func TestSetObservationCollection(t *testing.T) {
-	tMember := []Member{Member{Id: "someID", OmType: "Measurement",
+	tMember := []Member{Member{ID: "someID", OmType: "Measurement",
 		ObservedProperty: Href{"http://example.com/foo"},
 		Procedure:        Href{"http://example.com/bar"},
 		ResultTime:       "2015-10-15T10:10:10Z",
@@ -15,7 +15,7 @@ func TestSetObservationCollection(t *testing.T) {
 	tSetMember := SetMember("someID", "Measurement", "http://example.com/foo",
 		"http://example.com/bar", "2015-10-15T10:10:10Z", 15,
 		"http://example.com/baz")
-	expected := ObservationCollection{Id: "someOtherId",
+	expected := ObservationCollection{ID: "someOtherId",
 		FeatureOfInterest: Href{"http://example.com/qux"},
 		PhenomenonTime: Instant{"2015-10-15T10:10:10Z"},Member: tMember}
 	tr := SetObservationCollection("someOtherId","http://example.com/qux",

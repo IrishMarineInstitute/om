@@ -1,4 +1,4 @@
-// om project om.go - A Go package to handle data in ISO19156 Observations &
+// Package om handles data in ISO19156 Observations &
 // Measurements, with specific reference to the OM-JSON encoding
 package om
 
@@ -18,7 +18,7 @@ type Result struct {
 
 // Member describes an individual Member of an Observation Collection
 type Member struct {
-	Id               string `json:"id"`
+	ID               string `json:"id"`
 	OmType           string `json:"type"`
 	ObservedProperty Href   `json:"observedProperty"`
 	Procedure        Href   `json:"procedure"`
@@ -35,7 +35,7 @@ type Instant struct {
 // ObservationCollection is for grouping a number of Observations against the
 // same phenomenon time and feature of interest
 type ObservationCollection struct {
-	Id                string   `json:"id"`
+	ID                string   `json:"id"`
 	FeatureOfInterest Href     `json:"featureOfInterest"`
 	PhenomenonTime    Instant  `json:"phenomenonTime"`
 	Member            []Member `json:"member"`
@@ -65,9 +65,9 @@ func SetMember(id string, omType string, obsProp string, procedure string,
 		Result{result, uom}}
 }
 
-// SetObservation creates an obserbvation colletion from an id, a feature of
-// interest, a phenomenon time and any number of member observations It takes
-// the followinginputs:
+// SetObservationCollection creates an obserbvation colletion from an id, a 
+// feature of interest, a phenomenon time and any number of member observations. 
+// It takes the followinginputs:
 //
 //		id			A string giving an identifier to the ObservationCollection
 //		foi			A dtring giving a URL to a definition of the Feature of

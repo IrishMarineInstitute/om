@@ -6,7 +6,7 @@ import (
 )
 
 func TestSetMember(t *testing.T) {
-	expected := Member{Id: "someID", OmType: "Measurement",
+	expected := Member{ID: "someID", OmType: "Measurement",
 		ObservedProperty: Href{"http://example.com/foo"},
 		Procedure:        Href{"http://example.com/bar"},
 		ResultTime:       "2015-10-15T10:10:10Z",
