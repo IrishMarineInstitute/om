@@ -1,3 +1,4 @@
+[![GoDoc](https://godoc.org/github.com/IrishMarineInstitute/om?status.svg)](https://godoc.org/github.com/IrishMarineInstitute/om)
 #OM - Observations & Measurements for Go
 A simple library for working with ISO 19156 Observations & Measurements data in 
 Go, particularly focussed on the OM-JSON encoding.
