@@ -65,8 +65,8 @@ func SetMember(id string, omType string, obsProp string, procedure string,
 		Result{result, uom}}
 }
 
-// SetObservationCollection creates an obserbvation colletion from an id, a 
-// feature of interest, a phenomenon time and any number of member observations. 
+// SetObservationCollection creates an obserbvation colletion from an id, a
+// feature of interest, a phenomenon time and any number of member observations.
 // It takes the followinginputs:
 //
 //		id			A string giving an identifier to the ObservationCollection

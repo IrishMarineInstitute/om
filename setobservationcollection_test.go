@@ -2,12 +2,12 @@
 package om
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestSetObservationCollection(t *testing.T) {
-	tMember := []Member{Member{ID: "someID", OmType: "Measurement",
+	tMember := []Member{{ID: "someID", OmType: "Measurement",
 		ObservedProperty: Href{"http://example.com/foo"},
 		Procedure:        Href{"http://example.com/bar"},
 		ResultTime:       "2015-10-15T10:10:10Z",
@@ -17,9 +17,9 @@ func TestSetObservationCollection(t *testing.T) {
 		"http://example.com/baz")
 	expected := ObservationCollection{ID: "someOtherId",
 		FeatureOfInterest: Href{"http://example.com/qux"},
-		PhenomenonTime: Instant{"2015-10-15T10:10:10Z"},Member: tMember}
-	tr := SetObservationCollection("someOtherId","http://example.com/qux",
-		"2015-10-15T10:10:10Z",tSetMember)
+		PhenomenonTime:    Instant{"2015-10-15T10:10:10Z"}, Member: tMember}
+	tr := SetObservationCollection("someOtherId", "http://example.com/qux",
+		"2015-10-15T10:10:10Z", tSetMember)
 	if reflect.DeepEqual(tr, expected) == false {
 		t.Errorf("SetMember failed unit test...")
 	}
